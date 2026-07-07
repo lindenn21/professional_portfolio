@@ -1,0 +1,29 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:      #F4F3EE;
+  --fg:      #0D0D0D;
+  --muted:   #6B6860;
+  --border:  rgba(13,13,13,0.14);
+  --surface: #E2E0DA;
+  --accent:  #C8302A;
+}
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+.container { max-width: 1200px; margin: 0 auto; padding: 0 48px; }
+
+.label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
