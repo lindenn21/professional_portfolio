@@ -27,3 +27,77 @@ body {
   text-transform: uppercase;
   color: var(--accent);
 }
+.mono {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+hr.rule { border: none; border-top: 1px solid var(--border); }
+
+.wire-box {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+/* ── HERO ── */
+.hero { padding: 112px 0 128px; }
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: 48px; align-items: start;
+}
+
+.hero h1 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(56px, 9vw, 120px);
+  font-weight: 700; line-height: 0.92;
+  letter-spacing: -0.01em; margin-top: 20px;
+}
+
+.hero h1 .accent { color: var(--accent); }
+
+.hero p {
+  margin-top: 32px; max-width: 400px;
+  font-size: 15px; line-height: 1.7;
+  color: var(--muted); font-weight: 300;
+}
+
+.hero-actions { display: flex; align-items: center; gap: 24px; margin-top: 40px; }
+
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  display: flex; align-items: center;
+  justify-content: space-between; height: 56px;
+}
+
+.nav-brand {
+  display: flex; align-items: center; gap: 10px;
+  text-decoration: none; color: var(--fg);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+}
+
+.nav-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+
+.nav-links { display: flex; gap: 32px; list-style: none; }
+
+.nav-links a {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--muted); text-decoration: none; transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--fg); }
