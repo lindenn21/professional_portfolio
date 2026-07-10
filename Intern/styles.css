@@ -1,5 +1,10 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+
+
+.my-element {
+  font-family: 'Copperplate', 'Copperplate Gothic Bold', 'Copperplate Gothic Light', fantasy;
+}
 :root {
   --bg:      #f4f3ee;
   --fg:      #0D0D0D;
@@ -73,7 +78,7 @@ hr.rule { border: none; border-top: 1px solid var(--border); }
     width:100%;
     height:100%;
     object-fit:cover;
-    filter:brightness(.45);
+    filter:brightness(.40);
      
 }
 /* Overlay */
@@ -120,13 +125,19 @@ hr.rule { border: none; border-top: 1px solid var(--border); }
 /* BIG TITLE */
 
 .hero h1{
-  font-family:'DM MONO',monospace;
-  font-size:clamp(100px,12vw,140px);
+  font-family:'Cinzel', serif;
+  font-size:clamp(90px,12vw,120px);
   font-weight:700;
   line-height:0.85;
   margin-bottom:25px;
   color:white;
+  
 }
+
+.name_accent {
+  color: rgb(214, 12, 12);
+}
+
 
 /* DESCRIPTION */
 
@@ -541,6 +552,12 @@ wire-box Portrait {
 
   opacity:0;
   transition:.3s;
+}
+
+.overlay p {
+  color: var(--accent);
+  font-family: "DM MONO", monospace;
+  font-size:18px;
 }
 
 .work-card:hover img{
