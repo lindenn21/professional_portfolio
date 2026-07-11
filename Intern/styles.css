@@ -484,8 +484,17 @@ hr.rule { border: none; border-top: 1px solid var(--border); }
 /* WORKS */
 
 #works{
-  background:var(--fg);
-  padding:120px 0;
+  background: var(--fg);
+  min-height: 100vh;
+  padding: 100px 0;
+  display: flex;
+  align-items: center;
+}
+
+#works .container{
+  max-width:100%;
+  width:100%;
+  padding:0 50px;
 }
 
 .works-label{
@@ -498,28 +507,18 @@ hr.rule { border: none; border-top: 1px solid var(--border); }
 
 .works-grid{
   display:grid;
-  grid-template-columns:2fr 1fr;
-  gap:20px;
+  grid-template-columns:repeat(auto-fit, minmax(350px,1fr));
+  gap:30px;
 }
 
 .work-card{
   position:relative;
+  aspect-ratio:16/10;
   overflow:hidden;
-  border-radius:18px;
-  cursor:default;
+  border-radius:20px;
 }
 
-.large{
-  height:520px;
-}
 
-.medium{
-  height:250px;
-}
-
-.small{
-  height:340px;
-}
 
 .work-card img{
   width:100%;
@@ -589,7 +588,17 @@ hr.rule { border: none; border-top: 1px solid var(--border); }
 
 #experience{
   padding:120px 0;
-  background: red;
+  background: var(--fg);
+}
+
+.experience-label {
+  display:flex;
+  margin-bottom:35px;
+  font-size:13px;
+  letter-spacing:6px;
+  color: #d2b15b;
+
+
 }
 
 .experience-list{
