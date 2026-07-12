@@ -32,6 +32,25 @@ body {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   line-height: 1.6;
+  position: relative;
+  background-color: var(--fg); 
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at 50% 30%,
+    rgba(200, 48, 42, 0.12),
+    transparent 60%
+  );
+  pointer-events: none;
+  z-index: -1;
 }
 
 .container {
@@ -1287,5 +1306,113 @@ hr.rule {
 
   .resume-card h3{
     font-size:1.2rem;
+  }
+}
+
+.contact-section {
+  padding: 100px 40px;
+  background: linear-gradient(180deg, #0d0d0d, #1a0808);
+}
+
+.contact-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact-left {
+  flex: 1;
+  min-width: 260px;
+}
+
+.contact-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 16px;
+  line-height: 1.1;
+}
+
+.contact-desc {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 15px;
+  line-height: 1.7;
+  max-width: 320px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(160px, 1fr));
+  gap: 14px;
+  flex: 1.6;
+  min-width: 300px;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(180, 30, 30, 0.12), rgba(30, 20, 20, 0.4));
+  border: 1px solid rgba(255, 60, 60, 0.15);
+  text-decoration: none;
+  transition: transform 0.2s, border-color 0.2s, background 0.2s;
+}
+
+.contact-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 60, 60, 0.4);
+  background: linear-gradient(135deg, rgba(200, 40, 40, 0.2), rgba(30, 20, 20, 0.5));
+}
+
+.contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #c8302a, #4a1010);
+  color: #fff;
+  font-size: 16px;
+}
+
+.contact-card h3 {
+  font-size: 13px;
+  color: #fff;
+  font-weight: 600;
+  margin: 0 0 2px 0;
+}
+
+.contact-card p {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 130px;
+}
+
+@media (max-width: 767px) {
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 60px 20px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
   }
 }
