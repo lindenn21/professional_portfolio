@@ -125,7 +125,7 @@ hr.rule {
 
 .hero-content {
   position: absolute;
-  top: 15%;
+  top: 20%;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
@@ -188,11 +188,12 @@ hr.rule {
 
 .hero p {
   max-width: 650px;
-  font-size: clamp(12px, 2.2vw, 12px);
+  font-size: clamp(20px, 9vw, 24px);
   line-height: 1.8;
   font-weight: 600;
-  color: var(--bg);
+  color: gray;
   margin-bottom: 40px;
+  margin-left:10px;
   
 }
 
