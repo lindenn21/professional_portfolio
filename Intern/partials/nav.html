@@ -1,54 +1,30 @@
-<nav class="navbar navbar-expand-lg navbar">
-  <a class="navbar-brand" href="#">Portfolio</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+<nav class="floating-nav" id="floatingNav">
+  <div class="nav-brand">
+    <span class="brand-name">Linden</span>
+    <span class="brand-sub">PORTFOLIO</span>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#works">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <div class="nav-actions">
+  </div>
+
+  <button class="navbar-toggler" type="button" id="navToggler" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#about">About</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          Portfolio
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#works">Works</a>
-          <!-- <div class="dropdown-divider"></div> -->
-          <a class="dropdown-item" href="#resume">Resume</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          Contact
-        </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="contactDropdown">
-          <a class="dropdown-item">
-            <i class="bi bi-envelope-fill"></i> lindenpowellr@gmail.com
-          </a>
-          <a class="dropdown-item">
-            <i class="bi bi-telephone-fill"></i> +63 976-456-2744
-          </a>
-        </div>
-      </li>
-    </ul>
-    <div class="ml-auto d-flex align-items-center">
-      <a href="https://github.com/lindenn21" target="_blank" class="nav-link">
-        <i class="bi bi-github"></i>
-      </a>
-      <a href="https://www.facebook.com/lindenpowell.rivera" target="_blank" class="nav-link">
-        <i class="bi bi-facebook"></i>
-      </a>
-      <a href="https://www.instagram.com/_lindeaf?igsh=MXR0ZmsyMnFnbng3OA%3D%3D&utm_source=qr" target="_blank" class="nav-link">
-        <i class="bi bi-instagram"></i>
-      </a>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#works">Projects</a>
+    <a href="#contact">Contact</a>
+    <div class="mobile-socials">
+      <a href="https://github.com/lindenn21" target="_blank"><i class="bi bi-github"></i></a>
+      <a href="https://www.facebook.com/lindenpowell.rivera" target="_blank"><i class="bi bi-facebook"></i></a>
+      <a href="https://www.instagram.com/_lindeaf?igsh=MXR0ZmsyMnFnbng3OA%3D%3D&utm_source=qr" target="_blank"><i class="bi bi-instagram"></i></a>
     </div>
   </div>
 </nav>
