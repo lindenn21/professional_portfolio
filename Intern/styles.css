@@ -54,6 +54,7 @@
   }
 }
 
+
 a {
   color: inherit;
   text-decoration: none;
@@ -815,13 +816,12 @@ hr.rule {
 }
 
 .about-description {
-  font-family: 'DM MONO', monospace;
+  font-family: 'Arial', sans-serif;
   margin-bottom: 35px;
   line-height: 2;
   color: var(--bg);
   font-size: 15px;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   max-width:700px;
   
 
@@ -991,6 +991,11 @@ hr.rule {
   align-items: flex-start;
 }
 
+.work-letter-border {
+  color:var(--accent);
+  -webkit-text-stroke: 0.5px black;
+}
+
 #works .container {
   max-width: 100%;
   width: 100%;
@@ -1038,7 +1043,7 @@ hr.rule {
 .card-content h3 {
   margin: 0;
   font-size: 15px;
-  color: #2325a7;
+  color: var(--accent);
   font-family: 'DM Mono', monospace;
   
 
@@ -1050,7 +1055,7 @@ hr.rule {
   margin-top: 10px;
   font-size: 24px;
   font-family: 'DM MONO', monospace;
-  color: #2325a7;
+  color: var(--accent);
 }
 
 .overlay {
@@ -1066,14 +1071,14 @@ hr.rule {
   padding: 30px;
   text-align: center;
 
-  color: white;
+  color: var(--accent);
 
   opacity: 0;
   transition: .3s;
 }
 
 .overlay p {
-  color: var(--accent);
+  color: white;
   font-family: "DM MONO", monospace;
   font-size: 13px;
 }
