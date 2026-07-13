@@ -1,0 +1,672 @@
+/*==================================================
+ABOUT
+==================================================*/
+
+#about{
+position:relative;
+padding:140px 0;
+}
+
+.about-container{
+display:flex;
+flex-direction:column;
+gap:70px;
+}
+
+/*==============================
+HEADER
+==============================*/
+
+.about-header{
+display:grid;
+grid-template-columns:1.1fr .9fr;
+align-items:center;
+gap:70px;
+}
+
+.section-title{
+font-family:"Barlow Condensed",sans-serif;
+font-size:clamp(3rem,5vw,4.6rem);
+line-height:1;
+letter-spacing:-2px;
+color:#fff;
+margin-bottom:20px;
+}
+
+.section-subtitle{
+color:var(--muted);
+font-size:1.05rem;
+line-height:1.9;
+max-width:650px;
+}
+
+/*==============================
+META
+==============================*/
+
+.about-meta{
+margin-top:35px;
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+}
+
+.about-meta span{
+display:flex;
+align-items:center;
+gap:10px;
+
+padding:12px 20px;
+
+border-radius:999px;
+
+background:rgba(255,45,45,.08);
+
+border:1px solid rgba(255,45,45,.16);
+
+color:#ececec;
+
+font-size:.95rem;
+
+transition:.3s;
+}
+
+.about-meta span:hover{
+transform:translateY(-3px);
+background:rgba(255,45,45,.16);
+}
+
+.about-meta i{
+color:var(--red);
+}
+
+/*==============================
+VIDEO / IMAGE CARD
+==============================*/
+
+.about-header-photo{
+
+position:relative;
+
+overflow:hidden;
+
+border-radius:30px;
+
+background:rgba(255,255,255,.03);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(16px);
+
+box-shadow:var(--shadow);
+
+}
+
+.about-header-photo video{
+
+width:100%;
+
+display:block;
+
+object-fit:cover;
+
+transition:.6s;
+
+}
+
+.about-header-photo:hover video{
+
+transform:scale(1.03);
+
+}
+
+.about-header-photo::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:linear-gradient(
+to top,
+rgba(0,0,0,.45),
+transparent 55%
+);
+
+pointer-events:none;
+
+z-index:1;
+
+}
+
+/*==============================
+PHOTO TAG
+==============================*/
+
+.photo-overlay-tag{
+
+position:absolute;
+
+left:25px;
+
+bottom:25px;
+
+z-index:2;
+
+padding:14px 22px;
+
+border-radius:999px;
+
+background:rgba(15,15,15,.65);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.08);
+
+color:white;
+
+font-size:.9rem;
+
+}
+
+.photo-overlay-tag i{
+
+color:var(--red);
+
+}
+
+.status-dot{
+
+position:absolute;
+
+top:22px;
+
+right:22px;
+
+width:14px;
+
+height:14px;
+
+border-radius:50%;
+
+background:#42ff5d;
+
+box-shadow:0 0 18px #42ff5d;
+
+z-index:3;
+
+}
+
+/*==============================
+BODY
+==============================*/
+/* .about-body{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px; */
+
+.about-body{
+
+    width:90%;
+    ax-width:1200px;
+    
+    margin:0 auto;
+    
+    display:grid;
+
+    grid-template-columns:1.5fr .8fr;
+    
+    gap:40px;
+    
+    align-items:start;
+    
+}
+/*==============================
+SKILLS CARD
+==============================*/
+
+.about-skills{
+
+/* background:rgba(255,255,255,.03);
+
+border:1px solid rgba(255,255,255,.08); */
+
+border-radius:30px;
+
+
+
+padding:20px;
+
+backdrop-filter:blur(16px);
+
+display:flex;
+
+flex-direction:column;
+
+gap:8px;
+
+transition:.35s;
+
+}
+
+/* .about-skills:hover{
+
+transform:translateY(-6px);
+
+box-shadow:
+0 20px 50px rgba(0,0,0,.35),
+0 0 25px rgba(255,50,50,.08);
+
+} */
+
+.skill-group h4{
+
+margin-bottom:15px;
+
+color:white;
+
+font-size:1.1rem;
+
+}
+
+.tag-row{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:12px;
+
+}
+
+.tag{
+
+padding:8px 14px;
+
+font-size:.85rem;
+
+border-radius:999px;
+
+background:rgba(255,45,45,.08);
+
+border:1px solid rgba(255,45,45,.16);
+
+color:#ededed;
+
+transition:.3s;
+
+cursor:default;
+
+}
+
+.tag:hover{
+
+background:var(--red);
+
+transform:translateY(-3px);
+
+}
+
+/*==============================
+BIO CARD
+==============================*/
+
+.about-bio-card{
+
+    padding:40px;
+
+    border-radius:30px;
+
+    /* background:rgba(255,255,255,.03);
+
+    border:0px solid rgba(255,255,255,.08); */
+
+    backdrop-filter:blur(16px);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:35px;
+
+    transition:.35s;
+
+
+
+}
+
+
+/* .about-bio-card:hover{
+
+    transform:translateY(-6px); */
+
+    /* box-shadow:
+    0 20px 50px rgba(0,0,0,.35),
+    0 0 25px rgba(255,50,50,.08); 
+}   */
+
+
+
+.about-bio-card{
+
+    width:100%;
+
+    box-sizing:border-box;
+
+}
+
+@media(max-width:900px){
+
+    .about-body{
+
+        grid-template-columns:1fr;
+
+        width:90%;
+
+    }
+
+
+    .about-bio-card{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+
+    .bio-profile{
+
+        width:200px;
+
+        height:250px;
+
+    }
+
+}
+
+@media(max-width:500px){
+
+    .about-body{
+
+        width:95%;
+
+    }
+
+
+    .about-bio-card{
+
+        padding:25px;
+
+    }
+
+
+    .bio-profile{
+
+        width:170px;
+
+        height:220px;
+
+    }
+
+
+    .about-bio-card p{
+
+        font-size:.95rem;
+
+        line-height:1.8;
+
+    }
+
+}
+
+
+/*==============================
+PROFILE BOX
+==============================*/
+
+.bio-profile{
+
+    width:220px;
+
+    height:280px;
+
+    flex-shrink:0;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+
+.bio-profile video,
+.bio-profile img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+
+/*==============================
+BIO TEXT
+==============================*/
+
+.bio-content{
+
+    flex:1;
+
+}
+
+
+.about-bio-card p{
+
+    color:#d7d7d7;
+
+    line-height:2;
+
+    margin-bottom:22px;
+
+}
+
+/*==============================
+EDUCATION
+==============================*/
+
+.education-block{
+
+margin-top:20px;
+
+}
+
+.education-list{
+
+display:flex;
+
+flex-direction:column;
+
+gap:22px;
+
+margin-top:40px;
+
+}
+
+.education-card{
+
+display:grid;
+
+grid-template-columns:70px 1fr auto;
+
+align-items:center;
+
+gap:25px;
+
+padding:28px;
+
+border-radius:24px;
+
+background:rgba(255,255,255,.03);
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.35s;
+
+}
+
+.education-card:hover{
+
+transform:translateY(-6px);
+
+border-color:rgba(255,45,45,.2);
+
+box-shadow:
+0 20px 50px rgba(0,0,0,.35),
+0 0 25px rgba(255,50,50,.08);
+
+}
+
+.edu-icon{
+
+width:58px;
+
+height:58px;
+
+border-radius:18px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:1.3rem;
+
+color:var(--red);
+
+background:rgba(255,45,45,.08);
+
+}
+
+.edu-icon.red{
+
+background:var(--red);
+
+color:white;
+
+}
+
+.edu-info h3{
+
+margin-bottom:8px;
+
+font-size:1.2rem;
+
+color:white;
+
+}
+
+.edu-info p{
+
+color:var(--muted);
+
+}
+
+.edu-date{
+
+padding:12px 18px;
+
+border-radius:999px;
+
+background:rgba(255,255,255,.05);
+
+color:#e5e5e5;
+
+font-size:.9rem;
+
+}
+
+.edu-date.current{
+
+background:rgba(255,45,45,.15);
+
+color:white;
+
+}
+
+.about-header-photo{
+    position:relative;
+    overflow:hidden;
+    aspect-ratio:4/5;
+}
+/*==============================
+ABOUT INTRO
+==============================*/
+
+#aboutIntro{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-bottom:60px;
+
+}
+
+#aboutVideo{
+
+    width:100%;
+
+    max-width:650px;
+
+    border-radius:30px;
+
+    display:block;
+
+    object-fit:cover;
+
+}
+
+#aboutContent{
+
+    display:none;
+
+    opacity:0;
+
+    transform:translateY(50px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+
+}
+
+#aboutContent.show{
+
+    display:block;
+
+    opacity:1;
+
+    transform:none;
+
+}
+
+.about-bio-card{
+    display:flex;
+    gap:35px;
+    align-items:center;
+}
+
+

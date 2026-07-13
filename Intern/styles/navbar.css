@@ -1,0 +1,326 @@
+/*==================================================
+                NAVBAR.CSS
+==================================================*/
+
+.floating-nav{
+
+    position:fixed;
+
+    top:24px;
+    left:50%;
+
+    transform:translateX(-50%) translateY(-30px);
+
+    width:min(1180px,92%);
+
+    height:72px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 28px;
+
+    border-radius:999px;
+
+    background:rgba(12,12,12,.78);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,70,70,.08);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.35);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:
+        opacity .4s,
+        transform .4s,
+        visibility .4s;
+
+    z-index:999;
+
+}
+
+/* Appears after Hero */
+
+.floating-nav.show{
+
+    opacity:1;
+    visibility:visible;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+
+}
+
+/*==============================
+            BRAND
+==============================*/
+
+.nav-brand{
+
+    display:flex;
+
+    flex-direction:column;
+
+    line-height:1;
+
+}
+
+.brand-name{
+
+    font-family:"Barlow Condensed",sans-serif;
+
+    font-size:2rem;
+
+    letter-spacing:2px;
+
+    color:white;
+
+}
+
+.brand-sub{
+
+    font-size:.7rem;
+
+    color:var(--muted);
+
+    letter-spacing:4px;
+
+    margin-top:2px;
+
+    text-transform:uppercase;
+
+}
+
+/*==============================
+            LINKS
+==============================*/
+
+.nav-links{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:36px;
+
+}
+
+.nav-links li{
+
+    position:relative;
+
+}
+
+.nav-link{
+
+    color:#bdbdbd;
+
+    font-size:.95rem;
+
+    font-weight:500;
+
+    transition:.35s;
+
+    position:relative;
+
+    padding:6px 0;
+
+}
+
+.nav-link:hover{
+
+    color:white;
+
+}
+
+/*==============================
+        ACTIVE LINK
+==============================*/
+
+.nav-link::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:-8px;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--red);
+
+    transition:.35s;
+
+}
+
+.nav-link.active{
+
+    color:white;
+
+}
+
+.nav-link.active::after{
+
+    width:100%;
+
+}
+
+/*==============================
+        MOBILE TOGGLE
+==============================*/
+
+.navbar-toggler{
+
+    display:none;
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.04);
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-direction:column;
+
+    gap:5px;
+
+}
+
+.navbar-toggler span{
+
+    width:20px;
+
+    height:2px;
+
+    background:white;
+
+    transition:.35s;
+
+}
+
+/*==============================
+        MOBILE MENU
+==============================*/
+
+.mobile-menu{
+
+    position:absolute;
+
+    top:90px;
+
+    left:0;
+
+    width:100%;
+
+    background:#111;
+
+    border-radius:24px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    overflow:hidden;
+
+    display:none;
+
+    flex-direction:column;
+
+}
+
+.mobile-menu.active{
+
+    display:flex;
+
+}
+
+.mobile-menu a{
+
+    padding:18px 24px;
+
+    color:white;
+
+    transition:.3s;
+
+}
+
+.mobile-menu a:hover{
+
+    background:rgba(255,50,50,.08);
+
+}
+
+/*==============================
+        HOVER EFFECT
+==============================*/
+
+.floating-nav::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:999px;
+
+    padding:1px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(255,60,60,.18),
+            transparent,
+            rgba(255,255,255,.04)
+        );
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+
+    mask-composite:exclude;
+
+}
+
+/*==============================
+        RESPONSIVE
+==============================*/
+
+@media(max-width:991px){
+
+    .nav-links{
+
+        display:none;
+
+    }
+
+    .navbar-toggler{
+
+        display:flex;
+
+    }
+
+    .floating-nav{
+
+        width:92%;
+
+        padding:0 20px;
+
+    }
+
+}

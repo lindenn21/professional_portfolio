@@ -1,137 +1,341 @@
-document.addEventListener('DOMContentLoaded', () => {
+/*=========================================
+        PORTFOLIO SCRIPT
+        Linden Powell Rivera
+=========================================*/
 
-  const sections = [
-    { id: "nav-include",        file: "partials/nav.html" },
-    { id: "hero-include",       file: "partials/hero.html" },
-    { id: "about-include",      file: "partials/about.html" },
-    { id: "works-include",      file: "partials/work.html" },
-    { id: "experience-include", file: "partials/experience.html" },
-    { id: "resume-include",     file: "partials/resume.html" },
-    { id: "contact-include",    file: "partials/contact.html" },
-  ];
+/*==============================
+        HTML INCLUDES
+==============================*/
 
-  let navLoaded = false;
-  let heroLoaded = false;
+async function includeHTML(id, file) {
 
-  function setupFloatingNav() {
-    if (!navLoaded || !heroLoaded) return;
+    const element = document.getElementById(id);
 
-    const nav = document.getElementById('floatingNav');
-    const home = document.getElementById('home');
+    if (!element) return;
 
-    if (!nav || !home) {
-      console.error('Nav or home section not found', nav, home);
-      return;
+    try {
+
+        const response = await fetch(file);
+
+        if (!response.ok)
+            throw new Error(`Cannot load ${file}`);
+
+        element.innerHTML = await response.text();
+
+    } catch (err) {
+
+        console.error(err);
+
     }
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        nav.classList.toggle('visible', !entry.isIntersecting);
-      },
-      { threshold: 0.1 }
-    );
-    observer.observe(home);
+}
 
-    const toggler = document.getElementById('navToggler');
-    const mobileMenu = document.getElementById('mobileMenu');
-    if (toggler && mobileMenu) {
-      toggler.addEventListener('click', () => {
-        mobileMenu.classList.toggle('open');
-      });
-    }
-  }
+/*==============================
+        LOAD EVERYTHING
+==============================*/
 
-  function initCustomCursor() {
-    const cursor = document.querySelector('.custom-cursor');
-    if (!cursor) {
-      console.error('custom-cursor element not found');
-      return;
-    }
+async function loadPortfolio() {
 
-    document.addEventListener('mousemove', (e) => {
-      cursor.style.left = e.clientX + 'px';
-      cursor.style.top = e.clientY + 'px';
-    });
+    await includeHTML("nav-include", "nav.html");
+    await includeHTML("hero-include", "hero.html");
+    await includeHTML("about-include", "about.html");
+    await includeHTML("experience-include", "experience.html");
+    await includeHTML("resume-include", "resume.html");
+    await includeHTML("works-include", "work.html");
+    await includeHTML("contact-include", "contact.html");
 
-    const hoverTargets = document.querySelectorAll('a, button, .btn-primary, .btn-ghost, .contact-card');
-    hoverTargets.forEach(el => {
-      el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
-      el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
-    });
-  }
+    initializePortfolio();
 
-  // custom cursor only depends on elements already in index.html (not partials), so init it now
-  initCustomCursor();
+}
 
-  sections.forEach(section => {
-    fetch(section.file)
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById(section.id).outerHTML = html;
+document.addEventListener("DOMContentLoaded", loadPortfolio);
 
-        if (section.id === "nav-include") {
-          navLoaded = true;
-          setupFloatingNav();
+/*=====================================================
+                INITIALIZE
+=====================================================*/
+
+function initializePortfolio() {
+
+    mobileNavigation();
+
+    navbarAnimation();
+
+    activeNavigation();
+
+    revealAnimation();
+
+    experienceTabs();
+
+    smoothScrolling();
+
+    playAboutVideo();
+
+    floatingHero();
+
+}
+
+/*=====================================================
+                NAVBAR
+=====================================================*/
+
+function navbarAnimation() {
+
+    const navbar = document.getElementById("floatingNav");
+
+    const hero = document.querySelector(".hero");
+
+    if (!navbar || !hero) return;
+
+    function updateNavbar() {
+
+        const trigger = hero.offsetHeight - 120;
+
+        if (window.scrollY > trigger) {
+
+            navbar.classList.add("show");
+
+        } else {
+
+            navbar.classList.remove("show");
+
         }
 
-        if (section.id === "hero-include") {
-          heroLoaded = true;
-          $('#heroCarousel').carousel({ interval: 5000, ride: 'carousel' });
-          setupFloatingNav();
-        }
+    }
 
-        if (section.id === "about-include") {
-          const aboutSection = document.getElementById('about');
-          const aboutVideo = document.getElementById('aboutVideo');
-          const aboutTitle = document.querySelector('.about-title');
-          const aboutContent = document.querySelector('.about-content');
+    updateNavbar();
 
-          const aboutObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                aboutVideo.classList.remove('faded');
-                aboutTitle.classList.remove('visible');
-                aboutContent.classList.remove('visible');
-                aboutVideo.currentTime = 0;
-                aboutVideo.play();
+    window.addEventListener("scroll", updateNavbar);
 
-                setTimeout(() => {
-                  aboutVideo.classList.add('faded');
-                }, 3000);
+}
 
-                setTimeout(() => {
-                  aboutTitle.classList.add('visible');
-                  aboutContent.classList.add('visible');
-                }, 3000);
+/*=====================================================
+                ACTIVE LINKS
+=====================================================*/
 
-              } else {
-                aboutVideo.pause();
-                aboutVideo.classList.remove('faded');
-                aboutTitle.classList.remove('visible');
-                aboutContent.classList.remove('visible');
-              }
+function activeNavigation() {
+
+    const sections = document.querySelectorAll("section");
+
+    const links = document.querySelectorAll(".nav-link");
+
+    if (!sections.length) return;
+
+    function updateLinks() {
+
+        let current = "";
+
+        sections.forEach(section => {
+
+            const top = section.offsetTop - 180;
+
+            const height = section.offsetHeight;
+
+            if (window.scrollY >= top &&
+                window.scrollY < top + height) {
+
+                current = section.id;
+
+            }
+
+        });
+
+        links.forEach(link => {
+
+            link.classList.remove("active");
+
+            if (link.dataset.target === current) {
+
+                link.classList.add("active");
+
+            }
+
+        });
+
+    }
+
+    updateLinks();
+
+    window.addEventListener("scroll", updateLinks);
+
+}
+
+/*=====================================================
+                REVEAL
+=====================================================*/
+
+function revealAnimation() {
+
+    const elements = document.querySelectorAll("[data-animate]");
+
+    if (!elements.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("show");
+
+            }
+
+        });
+
+    }, {
+
+        threshold: .15
+
+    });
+
+    elements.forEach(el => observer.observe(el));
+
+}
+
+/*=====================================================
+                EXPERIENCE
+=====================================================*/
+
+function experienceTabs() {
+
+    const tabs = document.querySelectorAll(".exp-tab");
+
+    const panels = document.querySelectorAll(".exp-panel");
+
+    if (!tabs.length) return;
+
+    tabs.forEach(tab => {
+
+        tab.addEventListener("click", () => {
+
+            tabs.forEach(t => t.classList.remove("active"));
+
+            tab.classList.add("active");
+
+            const target = tab.dataset.tab;
+
+            panels.forEach(panel => {
+
+                panel.classList.remove("active");
+
+                if (panel.dataset.panel === target) {
+
+                    panel.classList.add("active");
+
+                }
+
             });
-          }, { threshold: 0.1 });
 
-          aboutObserver.observe(aboutSection);
-        }
-      })
-      .catch(err => console.error(`Could not load ${section.file}:`, err));
-  });
+        });
 
-});
+    });
 
+}
 
-const cursor = document.querySelector('.custom-cursor');
+/*=====================================================
+            SMOOTH SCROLL
+=====================================================*/
 
-document.addEventListener('mousemove', (e) => {
-  cursor.style.left = e.clientX + 'px';
-  cursor.style.top = e.clientY + 'px';
-});
+function smoothScrolling() {
 
-const hoverTargets = document.querySelectorAll('a, button, .btn-primary, .btn-ghost, .contact-card');
-hoverTargets.forEach(el => {
-  el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
-  el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
-});
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
 
+        link.addEventListener("click", function (e) {
+
+            const target = document.querySelector(this.getAttribute("href"));
+
+            if (!target) return;
+
+            e.preventDefault();
+
+            target.scrollIntoView({
+
+                behavior: "smooth"
+
+            });
+
+        });
+
+    });
+
+}
+
+/*=====================================================
+            ABOUT VIDEO
+=====================================================*/
+
+function playAboutVideo() {
+
+    const video = document.getElementById("aboutVideo");
+
+    if (!video) return;
+
+    video.play().catch(() => { });
+
+}
+
+/*=====================================================
+            FLOATING HERO IMAGE
+=====================================================*/
+
+function floatingHero() {
+
+    const card = document.querySelector(".profile-hero");
+
+    if (!card) return;
+
+    let direction = 1;
+
+    let position = 0;
+
+    function animate() {
+
+        position += direction * 0.02;
+
+        if (position >= 8) direction = -1;
+
+        if (position <= 0) direction = 1;
+
+        card.style.transform = `translateY(${-position}px)`;
+
+        requestAnimationFrame(animate);
+
+    }
+
+    animate();
+
+}
+
+function mobileNavigation(){
+
+    const button=document.getElementById("navToggler");
+
+    const menu=document.getElementById("mobileMenu");
+
+    if(!button||!menu) return;
+
+    button.addEventListener("click",()=>{
+
+        menu.classList.toggle("active");
+
+    });
+
+}
+const aboutVideo = document.getElementById("aboutVideo");
+const aboutIntro = document.getElementById("aboutIntro");
+const aboutContent = document.getElementById("aboutContent");
+
+if (aboutVideo && aboutContent && aboutIntro) {
+
+    aboutVideo.addEventListener("ended", () => {
+
+        aboutIntro.style.display = "none";
+
+        aboutContent.style.display = "block";
+
+        requestAnimationFrame(() => {
+            aboutContent.classList.add("show");
+        });
+
+    });
+
+}
