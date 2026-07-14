@@ -1,16 +1,13 @@
-/*==================================================
+/*
                 BASE.CSS
         Linden Powell Rivera Portfolio
-==================================================*/
+*/
 
 /*-----------------------------
 Google Fonts
 ------------------------------*/
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 
-/*-----------------------------
-RESET
-------------------------------*/
 
 *{
     margin:0;
@@ -319,7 +316,7 @@ inset:0;
 
 pointer-events:none;
 
-opacity:.03;
+opacity:.09;
 
 z-index:-9;
 
@@ -333,7 +330,7 @@ rgba(255,60,60,.5) 97%
 
 linear-gradient(
 180deg,
-transparent 97%,
+transparent 10%,
 rgba(255,60,60,.5) 97%
 );
 

@@ -233,11 +233,14 @@
 
     flex-shrink:0;
 
+    
+
 }
 
 .exp-logo img{
 
     width:70%;
+    object-fit: cover;
 
 }
 
