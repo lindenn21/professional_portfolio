@@ -486,6 +486,7 @@ EDUCATION
 
 margin-top:20px;
 
+
 }
 
 .education-list{
@@ -507,6 +508,8 @@ display:grid;
 grid-template-columns:70px 1fr auto;
 
 align-items:center;
+
+
 
 gap:25px;
 
