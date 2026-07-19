@@ -14,30 +14,59 @@ gap:70px;
 }
 
 /*==============================
-HEADER
+ABOUT HEADER
 ==============================*/
 
-.about-header{
-display:grid;
-grid-template-columns:1.1fr .9fr;
-align-items:center;
-gap:70px;
+.about-header {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 70px;
+
 }
 
-.section-title{
-font-family:"Barlow Condensed",sans-serif;
-font-size:clamp(3rem,5vw,4.6rem);
-line-height:1;
-letter-spacing:-2px;
-color:#fff;
-margin-bottom:20px;
+.about-header > * {
+
+    min-width: 0;
+
 }
 
-.section-subtitle{
-color:var(--muted);
-font-size:1.05rem;
-line-height:1.9;
-max-width:650px;
+.section-title {
+
+    font-family: "Barlow Condensed", sans-serif;
+
+    font-size: clamp(3rem, 5vw, 4.6rem);
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+
+    color: #fff;
+
+    margin-bottom: 20px;
+
+}
+
+.section-title span {
+
+    display: block;
+
+}
+
+.section-subtitle {
+
+    color: var(--muted);
+
+    font-size: 1.05rem;
+
+    line-height: 1.9;
+
+    max-width: 650px;
+
 }
 
 /*==============================
@@ -209,7 +238,7 @@ BODY
 .about-body{
 
     width:90%;
-    ax-width:1200px;
+    max-width:1200px;
     
     margin:0 auto;
     
@@ -673,3 +702,128 @@ ABOUT INTRO
 }
 
 
+@media (max-width: 900px) {
+
+    .about-header {
+
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+        text-align: center;
+
+    }
+
+    .about-header > div:first-child {
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+    }
+
+    .section-title {
+
+        width: 100%;
+
+        text-align: center;
+
+        font-size: clamp(4rem, 11vw, 6rem);
+
+    }
+
+    .section-subtitle {
+
+        max-width: 600px;
+
+        text-align: center;
+
+    }
+
+    .about-meta {
+
+        justify-content: center;
+
+    }
+
+    .about-header-photo {
+
+        width: 75%;
+
+        max-width: 430px;
+
+        margin: 0 auto;
+
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    #about {
+
+        padding: 90px 0;
+
+    }
+
+    .about-container {
+
+        gap: 45px;
+
+    }
+
+    .about-header {
+
+        gap: 35px;
+
+    }
+
+    .section-title {
+
+        font-size: clamp(3.8rem, 18vw, 5.5rem);
+
+        line-height: .88;
+
+        letter-spacing: -1px;
+
+    }
+
+    .section-subtitle {
+
+        width: 90%;
+
+        font-size: 1rem;
+
+        line-height: 1.8;
+
+    }
+
+    .about-meta {
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 12px;
+
+    }
+
+    .about-meta span {
+
+        width: fit-content;
+
+        justify-content: center;
+
+    }
+
+    .about-header-photo {
+
+        width: 88%;
+
+        max-width: 350px;
+
+    }
+
+}
