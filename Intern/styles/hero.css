@@ -82,7 +82,7 @@
 
     font-family: "Barlow Condensed", sans-serif;
 
-    font-size: clamp(6rem, 10vw, 9rem);
+    font-size: clamp(3rem, 6vw, 5rem);
 
     line-height: .92;
 
@@ -136,7 +136,7 @@
 
     width: 100%;
 
-    max-width: 520px;
+    max-width: 320px;
 
     margin-left: auto;
 
@@ -148,7 +148,7 @@
 
     background: rgba(255, 255, 255, .04);
 
-    border: 1px solid rgba(255, 255, 255, .08);
+    border: 5px solid rgba(188, 0, 0, 0.659);
 
     backdrop-filter: blur(20px);
 

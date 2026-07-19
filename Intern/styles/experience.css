@@ -264,11 +264,11 @@
 
 .exp-arrow{
 
-    width:54px;
+    width:30px;
 
-    height:54px;
+    height:30px;
 
-    border-radius:50%;
+    border-radius:35%;
 
     display:flex;
 
@@ -278,7 +278,7 @@
 
     background:rgba(255,255,255,.03);
 
-    border:1px solid rgba(255,255,255,.08);
+    border:0px solid rgba(255,255,255,.08);
 
     transition:.35s;
 
@@ -286,9 +286,19 @@
 
 .exp-arrow i{
 
-    color:white;
+    color:rgb(0, 0, 0);
 
     font-size:1rem;
+
+}
+
+@media (max-width: 900px) {
+
+    .exp-arrow {
+
+        display: none;
+
+    }
 
 }
 
