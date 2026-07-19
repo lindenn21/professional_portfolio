@@ -11,7 +11,7 @@
 
     transform:translateX(-50%) translateY(-30px);
 
-    width:min(1180px,92%);
+    width:min(700px,92%);
 
     height:72px;
 
@@ -23,7 +23,7 @@
 
     border-radius:999px;
 
-    background:rgba(12,12,12,.78);
+    background:rgba(37, 7, 7, 0.78);
 
     backdrop-filter:blur(18px);
 

@@ -36,7 +36,7 @@
   
   .contact-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(160px, 1fr));
+    grid-template-columns: repeat(2, minmax(160px, 1fr));
     gap: 14px;
     flex: 1.6;
     min-width: 300px;
@@ -52,6 +52,7 @@
     border: 1px solid rgba(255, 60, 60, 0.15);
     text-decoration: none;
     transition: transform 0.2s, border-color 0.2s, background 0.2s;
+
   }
   
   .contact-card:hover {

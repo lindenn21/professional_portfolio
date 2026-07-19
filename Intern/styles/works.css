@@ -724,3 +724,84 @@
     will-change:transform;
 
 }
+
+/*==============================
+WORKS SWITCH
+==============================*/
+
+.works-switch {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-left: auto;
+
+}
+
+
+.works-tab {
+
+    padding: 12px 22px;
+
+    border-radius: 999px;
+
+    border: 1px solid rgba(255,255,255,.1);
+
+    background: rgba(255,255,255,.03);
+
+    color: var(--muted);
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    transition: .35s;
+
+}
+
+
+.works-tab:hover {
+
+    color: white;
+
+    border-color: rgba(180,0,0,.5);
+
+}
+
+
+.works-tab.active {
+
+    color: white;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #8b0000,
+            #350000
+        );
+
+    border-color: #8b0000;
+
+    box-shadow:
+
+        0 8px 25px rgba(120,0,0,.25);
+
+}
+
+
+/*==============================
+WORK CATEGORY
+==============================*/
+
+.personal-works {
+
+    display: none;
+
+}
+.works-tab:focus {
+
+    outline: none;
+
+}

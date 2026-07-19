@@ -202,6 +202,19 @@ BUTTONS
 
 }
 
+.btn-primary,
+.btn-ghost,
+.btn-primary:hover,
+.btn-ghost:hover,
+.btn-primary:visited,
+.btn-ghost:visited{
+
+    color: white;
+
+    text-decoration: none;
+
+}
+
 /*-----------------------------
 GLASS
 ------------------------------*/
@@ -336,23 +349,7 @@ rgba(255,60,60,.5) 97%
 
 background-size:120px 120px;
 
-animation:gridMove 45s linear infinite;
 
-}
-
-@keyframes gridMove{
-
-from{
-
-transform:translateY(0);
-
-}
-
-to{
-
-transform:translateY(120px);
-
-}
 
 }
 

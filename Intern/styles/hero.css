@@ -16,7 +16,11 @@
 
     padding: 0;
 
+    isolation: isolate;
+
 }
+
+
 
 .hero-wrap {
 
@@ -90,16 +94,60 @@
 
     margin-bottom: 20px;
 
-    color: white;
+    background:
+
+        linear-gradient(
+            110deg,
+            #ca1212 0%,
+            #170b56 35%,
+            #6f0000 48%,
+            #c00000 55%,
+            #671e1e 70%,
+            #ffffff 100%
+        );
+
+    background-size: 250% auto;
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    background-clip: text;
+
+    animation: nameGradient 10s ease-in-out infinite;
 
 }
+
+@keyframes nameGradient {
+
+    0% {
+
+        background-position: 0% center;
+
+    }
+
+    50% {
+
+        background-position: 100% center;
+
+    }
+
+    100% {
+
+        background-position: 0% center;
+
+    }
+
+}
+
 
 .name-accent {
 
-    color: var(--red);
+    color: #c00000;
+
+    -webkit-text-fill-color: #c00000;
 
 }
-
 .hero-role {
 
     font-size: 1.25rem;
@@ -146,9 +194,30 @@
 
     overflow: hidden;
 
-    background: rgba(255, 255, 255, .04);
+    background:
 
-    border: 5px solid rgba(188, 0, 0, 0.659);
+        linear-gradient(
+            rgba(20, 20, 20, .85),
+            rgba(20, 20, 20, .85)
+        ) padding-box,
+
+        linear-gradient(
+            120deg,
+            #020000,
+            #8b0000,
+            #0b0202,
+            #b00000,
+            #170303
+        ) border-box;
+
+    border: 5px solid transparent;
+
+    background-size:
+
+        auto,
+        300% 300%;
+
+    animation: profileBorder 3s ease-in-out infinite;
 
     backdrop-filter: blur(20px);
 
@@ -158,6 +227,33 @@
 
 }
 
+@keyframes profileBorder {
+
+    0% {
+
+        background-position:
+            0 0,
+            0% 50%;
+
+    }
+
+    50% {
+
+        background-position:
+            0 0,
+            100% 50%;
+
+    }
+
+    100% {
+
+        background-position:
+            0 0,
+            0% 50%;
+
+    }
+
+}
 .profile-hero img {
 
     width: 100%;
@@ -193,37 +289,6 @@
     z-index: 2;
 
     pointer-events: none;
-
-}
-
-.profile-hero::after {
-
-    content: "";
-
-    position: absolute;
-
-    inset: -1px;
-
-    border-radius: 34px;
-
-    padding: 1px;
-
-    background:
-
-        linear-gradient(145deg,
-            rgba(255, 60, 60, .45),
-            transparent,
-            rgba(255, 255, 255, .08));
-
-    -webkit-mask:
-
-        linear-gradient(#fff 0 0) content-box,
-
-        linear-gradient(#fff 0 0);
-
-    -webkit-mask-composite: xor;
-
-    mask-composite: exclude;
 
 }
 

@@ -66,6 +66,8 @@ function initializePortfolio() {
 
     experienceTabs();
 
+    worksTabs();
+
     smoothScrolling();
 
     playAboutVideo();
@@ -232,6 +234,59 @@ function experienceTabs() {
 }
 
 /*=====================================================
+                WORKS TABS
+=====================================================*/
+
+function worksTabs() {
+
+    const tabs = document.querySelectorAll(".works-tab");
+
+    const schoolWorks = document.querySelector(".school-works");
+
+    const personalWorks = document.querySelector(".personal-works");
+
+    if (!tabs.length) return;
+
+    tabs.forEach(tab => {
+
+        tab.addEventListener("click", () => {
+
+            const category = tab.dataset.category;
+
+
+            tabs.forEach(button => {
+
+                button.classList.remove("active");
+
+            });
+
+            tab.classList.add("active");
+
+
+            if (category === "school") {
+
+                schoolWorks.style.display = "grid";
+
+                personalWorks.style.display = "none";
+
+            }
+
+
+            if (category === "personal") {
+
+                schoolWorks.style.display = "none";
+
+                personalWorks.style.display = "grid";
+
+            }
+
+        });
+
+    });
+
+}
+
+/*=====================================================
             SMOOTH SCROLL
 =====================================================*/
 
@@ -339,3 +394,4 @@ if (aboutVideo && aboutContent && aboutIntro) {
     });
 
 }
+
