@@ -329,52 +329,182 @@
 
 }
 
-@media(max-width:991px){
+@media (max-width: 991px) {
 
-    .hero{
-    
-    padding:120px 0 80px;
-    
-    min-height:auto;
-    
-    }
-    
-    .hero-wrap{
-    
-    grid-template-columns:1fr;
-    
-    gap:60px;
-    
-    text-align:center;
-    
-    }
-    
-    .hero-content{
-    
-    margin:auto;
-    
-    }
-    
-    .hero-actions{
-    
-    justify-content:center;
-    
-    }
-    
-    .profile-hero{
-    
-    margin:auto;
-    
-    max-width:420px;
+    .hero {
 
-    filter:brightness(-45%);
+        padding: 110px 0 80px;
+
+        min-height: auto;
+
+    }
+
+    .hero-wrap {
+
+        width: min(92%, 650px);
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 45px;
+
+        text-align: center;
+
+    }
+
+    /* IMAGE FIRST */
+
+    .profile-hero {
+
+        order: 1;
+
+        width: 82%;
+
+        max-width: 390px;
+
+        margin: 0 auto;
+
+    }
+
+    /* TEXT SECOND */
+
+    .hero-content {
+
+        order: 2;
+
+        width: 100%;
+
+        max-width: 600px;
+
+        margin: 0 auto;
+
+    }
+
+    .hero-eyebrow {
+
+        justify-content: center;
+
+        margin-bottom: 20px;
+
+    }
+
+    .hero-eyebrow::before {
+
+        display: none;
+
+    }
+
+    .hero-name {
+
+        font-size: clamp(4.5rem, 13vw, 7rem);
+
+        line-height: .9;
+
+        letter-spacing: -2px;
+
+        margin-bottom: 25px;
+
+    }
+
+    .hero-role {
+
+        justify-content: center;
+
+        font-size: 1.15rem;
+
+        line-height: 1.6;
+
+        margin-bottom: 35px;
+
+    }
+
+    .hero-actions {
+
+        justify-content: center;
+
+    }
+
+    .scroll-reminder {
+
+        display: none;
+
+    }
+
+    .profile-hero {
+
+        order: 1;
+    
+        width: 82%;
+    
+        max-width: 390px;
+    
+        margin: 0 auto;
     
     }
-    
-    .hero-mini-avatar{
-    
-    display:none;
-    
+
+}
+
+@media (max-width: 600px) {
+
+    .hero {
+
+        padding: 100px 0 60px;
+
     }
-    
+
+    .hero-wrap {
+
+        width: 90%;
+
+        gap: 35px;
+
     }
+
+    .profile-hero {
+
+        width: 72%;
+
+        max-width: 280px;
+
+        border-radius: 25px;
+
+    }
+
+    .hero-eyebrow {
+
+        font-size: .8rem;
+
+        letter-spacing: 2px;
+
+    }
+
+    .hero-name {
+
+        font-size: clamp(4rem, 18vw, 5.5rem);
+
+        line-height: .88;
+
+    }
+
+    .hero-role {
+
+        font-size: 1rem;
+
+        max-width: 300px;
+
+        margin: 0 auto 30px;
+
+    }
+
+    .hero-actions {
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 14px;
+
+    }
+
+}
