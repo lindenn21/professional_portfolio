@@ -278,6 +278,8 @@
 
     padding:1px;
 
+    pointer-events: none;
+
     background:
 
         linear-gradient(
