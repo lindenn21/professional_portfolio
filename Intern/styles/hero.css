@@ -99,7 +99,7 @@
         linear-gradient(
             110deg,
             #ca1212 0%,
-            #170b56 35%,
+            #ffffff 35%,
             #6f0000 48%,
             #c00000 55%,
             #671e1e 70%,
@@ -115,6 +115,8 @@
     background-clip: text;
 
     animation: nameGradient 10s ease-in-out infinite;
+
+    -webkit-text-stroke: 3px black;
 
 }
 

@@ -108,11 +108,14 @@ section{
 
 }
 
+
 /*-----------------------------
 HEADINGS
 ------------------------------*/
 
-.section-title{
+.section-title
+.experience-title
+.works-title    {
 
     font-family:"Barlow Condensed",sans-serif;
 
@@ -123,6 +126,8 @@ HEADINGS
     line-height:.95;
 
     margin-bottom:18px;
+
+    -webkit-text-stroke: 3px red;
 
 }
 
